@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  * {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  #paragraph {
+    padding: 1vw;
+  }
+
+  #paragraph2 {
+    padding: 1vw;
+  }
+
+  button {
+    margin: 1vw;
+    height: 2vw;
+    width: 12.5vw;
+    font-size: 1.125vw;
+    color: white;
+    border: 0.125vw solid black;
+  }
+
+  #add-class {
+    background-color: cornflowerblue;
+  }
+
+  #add-multiple-classes {
+    background: linear-gradient(90deg, cornflowerblue, crimson);
+  }
+
+  #remove-class {
+    background-color: crimson;
+  }
+
+  #toggle-class {
+    background-color: seagreen;
+  }
+
+  #returns {
+    background-color: dodgerblue;
+  }
+
+  #set {
+    width: 15vw;
+    background-color: tomato;
+  }
+
+  #set-multiple {
+    width: 15vw;
+    background: linear-gradient(90deg, dodgerblue, tomato);
+  }
+
+  .cornflowerblue {
+    color: cornflowerblue;
+  }
+
+  .color {
+    color: white;
+  }
+
+  .background {
+    background: linear-gradient(90deg, cornflowerblue, crimson);
+  }
+
+  .toggle {
+    color: white;
+    background-color: seagreen;
+  }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+
+  $(document).ready(function () {
+    $('#add-class').on('click', function () {
+      $('#paragraph').addClass('cornflowerblue')
+    }
+    )
+  })
+
+  $(document).ready(function () {
+    $('#add-multiple-classes').click(function () {
+      $('#paragraph').addClass('color background')
+    })
+  })
+
+  $(document).ready(function () {
+    $('#remove-class').click(function () {
+      $('#paragraph').removeClass('color background cornflowerblue toggle')
+    })
+  })
+
+  $(document).ready(function () {
+    $('#toggle-class').click(function () {
+      $('#paragraph').toggleClass('toggle')
+    })
+  })
+
+  $(document).ready(function () {
+    $('#returns').click(function () {
+
+      let h4 = document.createElement('h4')
+      h4.setAttribute('class', 'x')
+
+      h4.innerText = "The color of paragraph above is " + $('#paragraph2').css('color')
+
+
+      $('div').html(h4)
+
+      $('.x').css({ "color": "gray", "margin": "1vw", "display": "block" })
+
+    })
+  })
+
+  $(document).ready(function () {
+    $('#set').click(function () {
+      $('#paragraph2').css("color", "tomato")
+    })
+  })
+
+  $(document).ready(function () {
+    $('#set-multiple').click(function () {
+      $('#paragraph2').css({ "color": "white", "background-color": "tomato", "font-family": "cursive" })
+    })
+  })
+</script>
+
+<body>
+  <center>
+    <h2><a href="05dimensions.html">Next</a></h2>
+  </center>
+
+  <h1>Get and Set CSS Classes</h1>
+  <h2><i style="color: steelblue;">addClass()</i> method adds one or more classes to the selected element(s)</h2>
+  <h2><i style="color: crimson;">removeClass()</i> method removes one or more classes from the selected element(s)</h2>
+  <h2><i style="color:seagreen;">toggleClass()</i> method toggles between adding/removing classes from the selected
+    element(s)
+  </h2>
+  <hr>
+  <h1 id="paragraph">This is a paragraph.</h1>
+  <br>
+  <button id="add-class">addClass()</button>
+  <button id="add-multiple-classes">addClass() multiple</button>
+  <button id="remove-class">removeClass()</button>
+  <button id="toggle-class">toggleClass()</button>
+  <hr>
+  <h2><i style="color:tomato;">css()</i> sets or returns one or more style properties for the selected element(s)</h2>
+  <h1 id="paragraph2" style="color: dodgerblue;">This is another paragraph.</h1>
+  <div></div>
+  <button id="returns">returns color</button>
+  <button id="set">set attribute & property</button>
+  <button id="set-multiple">set multiple properties</button>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#btn-element').click(function () {
+        $('h3').hide()
+      })
+    })
+
+    $(document).ready(function () {
+      $('#btn-id').click(function () {
+        $('#x').hide()
+      })
+    })
+
+    $(document).ready(function () {
+      $('#btn-class').click(function () {
+        $('.xl').hide()
+      })
+    })
+
+    $(document).ready(function () {
+      $('#btn-attribute').click(function () {
+        $('[style]').hide()
+      })
+    })
+
+    $(document).ready(function () {
+      $('#btn-current').click(function () {
+        $(this).hide()
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <center>
+    <h2><a href="03events.html">Next</a></h2>
+  </center>
+
+  <h1>Select Element</h1>
+  <h3>This is h3 tag(element).</h3>
+  <button id="btn-element">Hide Element</button>
+  <hr>
+
+  <h1>Select #id</h1>
+  <h2 id="x">This tag have an id.</h2>
+  <button id="btn-id">Hide by ID</button>
+  <hr>
+
+  <h1>Select .class</h1>
+  <h2 class="xl">This tag is contained in a class.</h2>
+  <button id="btn-class">Hide by Class</button>
+  <hr>
+
+  <h1>Select Attribute</h1>
+  <h2 id="xxl" style="color: rebeccapurple;">This element has style attribute</h2>
+  <button id="btn-attribute">Hide by Attribute</button>
+  <hr>
+
+  <h1>Select Current Attribute</h1>
+  <button id="btn-current">
+    <h2>Hide current Element by this keyword</h2>
+  </button>
+</body>
+
+</html>

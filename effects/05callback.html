@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#with-callback').click(function () {
+        $('h3').hide('slow', function () {
+          alert("The paragraph is now hidden.")
+        })
+      })
+    })
+
+    $(document).ready(function () {
+      $('#without-callback').click(function () {
+        $('h3').hide('slow')
+        alert("The paragraph is now hidden.")
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <center>
+    <h2><a href="06chaining.html">Next</a></h2>
+  </center>
+
+  <h1>Callback</h1>
+  <h2>A callback function is executed after the current effect is 100% finished.</h2>
+
+  <button id="without-callback">Hide Without Callback</button>
+  <button id="with-callback">Hide With Callback</button>
+  <h3>This is a paragraph.</h3>
+
+</body>
+
+</html>

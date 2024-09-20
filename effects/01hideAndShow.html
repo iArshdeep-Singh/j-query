@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#hide').click(function () {
+        $('#p1').hide()
+      })
+    })
+
+    $(document).ready(function () {
+      $('#show').click(function () {
+        $('#p1').show()
+      })
+    })
+
+    $(document).ready(function () {
+      $('#hide-slow').click(function () {
+        $('h4').hide('slow')
+      })
+    })
+
+    $(document).ready(function () {
+      $('#hide-fast').click(function () {
+        $('h4').hide('fast')
+      })
+    })
+
+    $(document).ready(function () {
+      $('#show-slow').click(function () {
+        $('h4').show('slow')
+      })
+    })
+
+    $(document).ready(function () {
+      $('#show-fast').click(function () {
+        $('h4').show('fast')
+      })
+    })
+
+    $(document).ready(function () {
+      $('#hide-1000').click(function () {
+        $('h4').hide(1000)
+      })
+    })
+
+    $(document).ready(function () {
+      $('#show-1000').click(function () {
+        $('h4').show(1000)
+      })
+    })
+
+    $(document).ready(function () {
+      $('#toggle').click(function () {
+        $('#toggle-p').toggle(1000)
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <center>
+    <h2><a href="02fade.html">Next</a></h2>
+  </center>
+
+  <h1>hide() And show()</h1>
+  <p id="p1">With jQuery, you can hide and show HTML elements with the hide() and show() methods</p>
+  <button id="hide">Hide</button> <button id="show">Show</button>
+  <hr>
+
+  <h1>hide()/show() with values "fast", "slow", or "milliseconds"</h1>
+  <h4>The optional speed parameter specifies the speed of the hiding/showing, and can take the following values: "slow",
+    "fast", or milliseconds.</h4>
+  <button id="hide-slow">
+    Hide Slow
+  </button>
+
+  <button id="show-slow">
+    Show Slow
+  </button>
+
+  <button id="hide-fast">
+    Hide Fast
+  </button>
+
+  <button id="show-fast">
+    Show Fast
+  </button>
+
+  <button id="hide-1000">
+    Hide 1000m
+  </button>
+
+  <button id="show-1000">
+    Show 1000m
+  </button>
+  <hr>
+
+  <h1>toggle()</h1>
+  <p id="toggle-p">You can also toggle between hiding and showing an element with the toggle() method.</p>
+  <button id="toggle">Toggle</button>
+</body>
+
+</html>

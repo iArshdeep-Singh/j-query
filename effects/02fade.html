@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="fade.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#fade-in').click(function () {
+        $('#div1').fadeIn()
+        $('#div2').fadeIn('slow')
+        $('#div3').fadeIn(1000)
+      })
+    })
+
+    $(document).ready(function () {
+      $('#fade-out').click(function () {
+        $('#div1').fadeOut()
+        $('#div2').fadeOut('fast')
+        $('#div3').fadeOut(2000)
+      })
+    })
+
+    $(document).ready(function () {
+      $('#fade-toggle').click(function () {
+        $('#div1').fadeToggle()
+        $('#div2').fadeToggle('fast')
+        $('#div3').fadeToggle(1000)
+      })
+    })
+
+    $(document).ready(function () {
+      $('#fade-to').click(function () {
+        $('#div1').fadeTo('slow', 0.5)
+        $('#div2').fadeTo('fast', 0.75)
+        $('#div3').fadeTo(1000, 0.25)
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <center>
+    <h2><a href="03slide.html">Next</a></h2>
+  </center>
+
+  <h1>Fadding</h1>
+  <h4>The jQuery fadeTo() method allows fading to a given opacity (value between 0 and 1).</h4>
+  <button id="fade-in">fadeIn()</button>
+  <button id="fade-out">fadeOut()</button>
+  <button id="fade-toggle">fadeToggle()</button>
+  <button id="fade-to">fadeTo()</button>
+  <div id="div1"></div>
+  <div id="div2"></div>
+  <div id="div3"></div>
+</body>
+
+</html>

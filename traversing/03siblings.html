@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#refresh").click(function () {
+        window.location.reload()
+      })
+
+      $("#siblings").click(function () {
+        $('#h3').siblings().css({ "color": "red", "border": "1.5px solid red" }),
+          $('#h3').css({ "color": "cornflowerblue", "border": "2px solid cornflowerblue" })
+      })
+
+      $("#siblings-p").click(function () {
+        $('#h3').siblings("p").css({ "color": "red", "border": "2px solid red" }),
+          $('#h3').css({ "color": "cornflowerblue", "border": "2px solid cornflowerblue" })
+      })
+
+      $("#next").click(function () {
+        $("#h3").next().css({ "color": "red", "border": "2px solid red" }),
+          $('#h3').css({ "color": "cornflowerblue", "border": "2px solid cornflowerblue" })
+      })
+
+      $("#next-all").click(function () {
+        $("#h3").nextAll().css({ "color": "red", "border": "2px solid red" }),
+          $('#h3').css({ "color": "cornflowerblue", "border": "2px solid cornflowerblue" })
+      })
+
+      $("#next-until").click(function () {
+        $("#h3").nextUntil("h6").css({ "color": "red", "border": "2px solid red" }),
+          $('#h3').css({ "color": "cornflowerblue", "border": "2px solid cornflowerblue" })
+      })
+
+      $("#prev").click(function () {
+        $("#h3").prev().css({ "color": "red", "border": "2px solid red" }),
+          $('#h3').css({ "color": "cornflowerblue", "border": "2px solid cornflowerblue" })
+      })
+
+      $("#prev-all").click(function () {
+        $("#h3").prevAll().css({ "color": "red", "border": "2px solid red" }),
+          $('#h3').css({ "color": "cornflowerblue", "border": "2px solid cornflowerblue" })
+      })
+
+      $("#prev-until").click(function () {
+        $("#h3").prevUntil("p").css({ "color": "red", "border": "2px solid red" }),
+          $('#h3').css({ "color": "cornflowerblue", "border": "2px solid cornflowerblue" })
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <center>
+    <h2><a href="04filtering.html">Next</a></h2>
+  </center>
+  <h3 style="color: yellow; background-color: black; text-align: center;">traverse sideways in the DOM tree to find
+    siblings of an element</h3>
+  <h1>Siblings share the same parent</h1>
+  <hr>
+  <h2><i style="color: dodgerblue;">siblings()</i> method returns all sibling elements of the selected element</h2>
+  <h2><i style="color: dodgerblue;">siblings("tag")</i> an optional parameter can be used to filter the search for
+    siblings</h2>
+  <h2><i style="color: dodgerblue;">next()</i> method returns the next sibling element of the selected element</h2>
+  <h2><i style="color: dodgerblue;">nextAll()</i> method returns all next sibling elements of the selected element</h2>
+  <h2><i style="color: dodgerblue;">nextUntil("tag")</i> method returns all next sibling elements between two given
+    arguments</h2>
+  <h2><i style="color: dodgerblue;">prev()</i>, <i style="color: dodgerblue;">prevAll()</i> and <i
+      style="color: dodgerblue;">prevUntil("tag")</i>methods work just like the methods above but with reverse
+    functionality:
+    they return previous sibling elements (traverse
+    backwards along sibling elements in the DOM tree, instead of forward).</h2>
+  <hr>
+  <hr>
+  <div id="container">
+    <p>&ltp&gt</p>
+    <span>&ltspan&gt</span>
+    <h2>&lt2&gt</h2>
+    <h3 id="h3">&lt3&gt</h3>
+    <h4>&lt4&gt</h4>
+    <h5>&lt5&gt</h5>
+    <h6>&lt6&gt</h6>
+    <p>&ltp&gt</p>
+  </div>
+  <hr>
+  <h3>
+    Select <b style="color: seagreen;">&lth3&gt</b>'s
+  </h3>
+  <button id="siblings">siblings()</button>
+  <button id="siblings-p">siblings("p")</button>
+  <button id="next">next()</button>
+  <button id="next-all">nextAll()</button>
+  <button id="next-until">nextUntil("h6")</button>
+  <button id="prev">prev()</button>
+  <button id="prev-all">prevAll()</button>
+  <button id="prev-until">prevUntil("p")</button>
+  <button id="refresh">Refresh</button>
+</body>
+<style>
+  * {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  body {
+    padding: 5px;
+  }
+
+  #refresh {
+    color: white;
+    background-color: seagreen;
+  }
+
+  #container * {
+    text-align: center;
+    font-size: 1.5vw;
+    margin: 0.5vw;
+    display: block;
+    width: 90%;
+    height: 2.5vw;
+    color: grey;
+    border: 1px solid grey;
+  }
+
+  button {
+    margin: 1vw;
+    height: 2vw;
+    width: 12.5vw;
+    font-size: 1.125vw;
+    color: white;
+    background-color: cornflowerblue;
+    border: 0.125vw solid black;
+    cursor: pointer;
+  }
+
+  #container {
+    padding: 0.75vw 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    border: 1px solid lightgray;
+  }
+</style>
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#btn-click').click(function () {
+        $('#x').hide()
+      })
+    })
+
+    $(document).ready(function () {
+      $('#btn-clickTwice').dblclick(function () {
+        $('#xl').hide()
+      })
+    })
+
+    $(document).ready(function () {
+      $('#xxl').mouseenter(function () {
+        alert('You entered p1!')
+      })
+    })
+
+    $(document).ready(function () {
+      $('#xxxl').mouseleave(function () {
+        alert("Bye! You now leave p1.")
+      })
+    })
+
+    $(document).ready(function () {
+      $('#xxxxl').mousedown(function () {
+        alert("Mouse down over p1")
+      })
+    })
+
+    $('document').ready(function () {
+      $('#xxxxxl').mouseup(function () {
+        alert('Mouse up over p1')
+      })
+    })
+
+    $(document).ready(function () {
+      $('#xxxxxxl').hover(function () {
+        alret("You entered p1")
+      },
+        function () {
+          alert("Bye! You now leave p1")
+        }
+      )
+    })
+
+    $(document).ready(function () {
+      $('input').focus(function () {
+        $(this).css("background-color", "red")
+      })
+    })
+
+    $(document).ready(function () {
+      $("input").focus(function () {
+        $(this).css("background-color", "blue")
+      })
+
+      $("input").blur(function () {
+        $(this).css("background-color", "yellow")
+      })
+    })
+
+    $(document).ready(function () {
+      $('#btn-on').on('click', function () {
+        $(this).hide()
+      })
+    })
+
+    $(document).ready(function () {
+      $('#btn-on-multiple').on({
+        click: function () {
+          $(this).css("background-color", "red")
+        },
+
+        dblclick: function () {
+          $(this).css("background-color", "blue")
+        }
+      })
+    })
+
+    $(document).ready(function () {
+      $('#timeout').click(function () {
+
+        let i = 1
+        let x = document.createElement('h1')
+
+        x.setAttribute('class', 'counter')
+        x.style.color = "yellowgreen"
+        x.innerText = "0";
+        $('#timeout-text').before(x)
+
+        setInterval(function () {
+          x.innerText = `${i}`
+          $('#timeout-text').before(x)
+          i++
+        }, 1000)
+
+
+        setTimeout(function () {
+          $('#timeout-text').hide('fast')
+        }, 5000)
+
+      })
+    })
+
+    $(document).ready(function () {
+      let count = 0
+
+      const setCount = (newCount) => {
+        count = newCount
+        $('#countx').text(count)
+      }
+
+      $('#setCount').click(function () {
+        setCount(count + 1)
+      })
+    })
+  </script>
+
+  <style>
+    p {
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <center>
+    <h2><a href="/effects/01hideAndShow.html">Next</a></h2>
+  </center>
+
+  <h1>click()</h1>
+  <p id="x">This will be hide by a click.</p>
+  <button id="btn-click">Click</button>
+  <hr>
+
+  <h1>dbclick()</h1>
+  <p id="xl">This will be hide by clicking twice.</p>
+  <button id="btn-clickTwice">Click Twice</button>
+  <hr>
+
+  <h1>mouseenter()</h1>
+  <p>This method attaches an event handler function to an HTML element.</p>
+  <p>The function is exectuted when the mouse pointer enters the HTML element.</p>
+  <p id="xxl" style="color:red;">Enter this paragraph.</p>
+  <hr>
+
+  <h1>mouseleave()</h1>
+  <p>This function is exectuted when the mouse pointer leaves the HTML element.</p>
+  <p id="xxxl" style="color: blue;">This is a paragraph.</p>
+  <hr>
+
+  <h1>mousedown()</h1>
+  <p>The function is executed, when the left, middle or right mouse button is pressed down, while the mouse is over the
+    HTML
+    element.</p>
+  <p id="xxxxl" style="color: blue;">This is a paragraph.</p>
+  <hr>
+
+  <h1>mouseup()</h1>
+  <p>The function is executed, when the left, middle or right mouse button is released, while the mouse is over the HTML
+    element.</p>
+  <p id="xxxxxl" style="color: green;">This is a paragraph.</p>
+  <hr>
+
+  <h1>hover()</h1>
+  <p>The <b>hover()</b> method takes two functions and is a combination of the <b>mouseenter()</b> and mouseleave()
+    methods.</p>
+  <p>The first function is executed when the mouse enters the HTML element, and the second function is executed when the
+    mouse leaves the HTML element:</p>
+  <p id="xxxxxxl" style="color:crimson;">This is a paragraph.</p>
+  <hr>
+
+  <h1>focus()</h1>
+  <p>The function is executed when the form field gets focus</p>
+  <label>Name: </label>
+  <input type="text" />
+  <hr>
+
+  <h1>blur()</h1>
+  <p>The function is exectuted when the form field loses focus</p>
+  <label>email: </label>
+  <input type="email" />
+  <hr>
+
+  <h1>on()</h1>
+  <p>The on() method attaches one or more event handlers for the selected elements. Attach a click event to a element
+  </p>
+  <button id="btn-on">
+    <h1>Hide Me!</h1>
+  </button>
+  <hr>
+
+  <h1>Attach multiple event handlers</h1>
+  <p style="background-color:red">click once</p>
+  <p style="background-color:blue; color:white">click twice</p>
+  <button id="btn-on-multiple">
+    <h1>Click Me!</h1>
+  </button>
+
+  <hr>
+  <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">setTimeout()/setInterval()</h1>
+  <h3 id="timeout-text" style="color: crimson;">This text will be disappear after 5 seconds.</h3>
+  <button id="timeout">
+    <h2>setTimeout() & setInterval()</h2>
+  </button>
+
+  <hr>
+  <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">setCount()</h1>
+  <h1 id="countx" style="color: cornflowerblue;">0</h1>
+  <button id="setCount">
+    <h1>setCount()</h1>
+  </button>
+</body>
+
+</html>

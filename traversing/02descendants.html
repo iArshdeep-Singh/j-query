@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#refresh').click(function () {
+        window.location.reload()
+      })
+
+      $('#children').click(function () {
+        $(".box").children().css({ "color": "red", "border": "2px solid red" }),
+          $("li").css("color", "grey"),
+          $(".box").css({ "color": "cornflowerblue", "border": "2px solid cornflowerblue" })
+      })
+
+      $("#chill").click(function () {
+
+        $(".box").children("p.first").css({ "color": "red", "border": "2px solid red" }),
+
+          $(".box").css({ "color": "cornflowerblue", "border": "2px solid cornflowerblue" }),
+          $("li").css("color", "grey"),
+          $("ul").css("color", "grey")
+      })
+
+      $("#find").click(function () {
+        $(".box").find("span").css({ "color": "red", "border": "2px solid red" }),
+          $("li").css("color", "grey"),
+          $("p").css("color", "grey"),
+          $("ul").css("color", "grey"),
+          $(".box").css({ "color": "cornflowerblue", "border": "2px solid cornflowerblue" })
+      })
+
+      $("#find-all").click(function () {
+        $(".box").find("*").css({ "color": "red", "border": "2px solid red" }),
+          $(".box").css({ "color": "cornflowerblue", "border": "2px solid cornflowerblue" })
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <center>
+    <h2><a href="03siblings.html">Next</a></h2>
+  </center>
+
+  <h3 style="color: yellow; background-color: black; text-align: center;">Traverse up the DOM tree to find ancestors of
+    an element</h3>
+  <h1>A descendant is a child, grandchild, great-grandchild, and so on</h1>
+  <hr>
+  <h2><i style="color: coral;">children()</i> method returns all direct children of the selected element. This method
+    only traverses a single level down the DOM tree</h2>
+  <h2><i style="color: coral;">children("tag")</i> method is used with parameter to filter the search for children</h2>
+  <h2><i style="color: dodgerblue;">find("tag")</i> method returns descendant elements of the selected element, all the
+    way
+    down to the last descendant</h2>
+  <h2><i style="color: dodgerblue;">find("*")</i> returns all descendants</h2>
+  <hr>
+  <div id="container">
+    <div class="box" id="first">
+      div (parent)
+      <ul>
+        ul (child)
+        <li>
+          li (grandchild)
+          <span>span (great-grandchild)</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="box" id="second">
+      div (parent)
+      <p class="first">
+        p: 1 (child)
+        <span>span (grandchild)</span>
+      </p>
+      <p class="second">
+        p: 2 (child)
+        <span>span (grandchild)</span>
+      </p>
+    </div>
+  </div>
+  <hr>
+  <h3>
+    Select <b style="color: seagreen;">&ltdiv&gt</b>'s
+  </h3>
+  <button id="children">children()</button>
+  <button id="chill">children("p.first")</button>
+  <button id="find">find("span")</button>
+  <button id="find-all">find("*")</button>
+  <button id="refresh">Refresh</button>
+
+</body>
+<style>
+  * {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  body {
+    padding: 5px;
+  }
+
+  #refresh {
+    color: white;
+    background-color: seagreen;
+  }
+
+  #second p span {
+    display: block;
+    margin: 1vw;
+    height: 2.5vw;
+    width: 25vw;
+    color: gray;
+    border: 1px solid gray;
+  }
+
+  #first ul li span {
+    display: block;
+    margin: 2vw;
+    height: 5vw;
+    width: 20vw;
+    color: grey;
+    border: 1px solid gray;
+  }
+
+  #second p {
+    margin: 1.5vw;
+    height: 6.5vw;
+    width: 30vw;
+    border: 1px solid gray;
+  }
+
+  #first ul li {
+    margin: 2vw;
+    height: 10vw;
+    width: 25vw;
+    border: 1px solid gray;
+    list-style: none;
+  }
+
+  #first ul {
+    margin: 2vw;
+    height: 15vw;
+    width: 30vw;
+    border: 1px solid gray;
+  }
+
+  #container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: auto;
+    width: 100%;
+    border: 1px solid lightgray;
+  }
+
+  .box {
+    margin: 2vw 0vw;
+    height: 20vw;
+    width: 40vw;
+    border: 1px solid grey;
+    color: gray;
+    padding: 0.25vw 0.5vw;
+  }
+
+  .box * {
+    padding: 0.25vw 0.5vw;
+  }
+
+  button {
+    margin: 1vw;
+    height: 2vw;
+    width: 12.5vw;
+    font-size: 1.125vw;
+    color: white;
+    background-color: tomato;
+    border: 0.125vw solid black;
+    cursor: pointer;
+  }
+</style>
+
+</html>

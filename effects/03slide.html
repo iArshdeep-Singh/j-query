@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="slide.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#slide-down').on('click', function () {
+        $('div').slideDown('slow')
+      })
+    })
+
+    $(document).ready(function () {
+      $('#slide-up').on('click', function () {
+        $('div').slideUp('fast')
+      })
+    })
+
+    $(document).ready(function () {
+      $('#slide-toggle').click(function () {
+        $('div').slideToggle(1000)
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <center>
+    <h2><a href="04stop.html">Next</a></h2>
+  </center>
+
+  <h1>Sliding</h1>
+  <span id="slide-down">slideDown()</span>
+  <span id="slide-up">slideUp()</span>
+  <span id="slide-toggle">slideToggle()</span>
+  <div></div>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#set-text').on('click', function () {
+        $('#text').text("Text has been changed.")
+      })
+    })
+
+    $(document).ready(function () {
+      $('#set-html').click(function () {
+        $('#html').html("<i>HTML has been changed.</i>")
+      })
+    })
+
+    $(document).ready(function () {
+      $('#set-value').click(function () {
+        $('[value]').val("ArshdeepSingh")
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <center>
+    <h2><a href="03addAndRemove.html">Next</a></h2>
+  </center>
+
+  <h1>Set</h1>
+
+  <h3 id="text">Text</h3>
+  <h3 id="html">HTML</h3>
+  <label>Input Field: </label>
+  <input type="text" value="2XXX">
+  <br><br>
+  <button id="set-text">Set Text</button>
+  <button id="set-html">Set HTML</button>
+  <button id="set-value">Set Value</button>
+</body>
+
+</html>

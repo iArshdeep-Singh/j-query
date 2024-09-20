@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#refresh").click(function () {
+        window.location.reload()
+      })
+
+      $("#first").click(function () {
+        $("p").first().css({ "color": "red", "border": "2px solid red" })
+      })
+
+      $("#last").click(function () {
+        $("p").last().css({ "color": "red", "border": "2px solid red" })
+      })
+
+      $("#eq").click(function () {
+        $("p").eq(1).css({ "color": "red", "border": "2px solid red" })
+      })
+
+      $("#filter").click(function () {
+        $('p').filter('.intro').css({ "color": "red", "border": "2px solid red" })
+      })
+
+      $("#not").click(function () {
+        $('p').not('.intro').css({ "color": "red", "border": "2px solid red" })
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <center>
+    <h2><a href="/misc/01no_conflict.html">Next</a></h2>
+  </center>
+  <h2 style="color: gray; font-size: 1.5vw;">The most basic filtering methods are <i
+      style="color: dodgerblue;">first()</i>, <i style="color: dodgerblue;">last()</i> and <i
+      style="color: dodgerblue;">eq()</i>, which allow you to select a specific element based on its position in a group
+    of elements</h2>
+
+  <h2 style="color: gray; font-size: 1.5vw;">Other filtering methods, like <i style="color: dodgerblue;">filter()</i>
+    and <i style="color: dodgerblue;">not()</i> allow you to select elements that match, or do not match, a certain
+    criteria</h2>
+  <hr>
+  <h2><i style="color: dodgerblue;">first()</i> method returns the first element of the specified elements</h2>
+  <h2><i style="color: dodgerblue;">last()</i> method returns the last element of the specified elements</h2>
+  <h2><i style="color: dodgerblue;">eq(i)</i> method returns an element with a specific index number of the selected
+    elements. The index numbers start at 0, so the first element will have the index number 0 and not 1</h2>
+  <h2><i style="color:crimson;">filter()</i> method lets you specify a criteria. Elements that do not match the
+    criteria are removed from the selection, and those
+    that match will be returned</h2>
+  <h2><i style="color:crimson;">not()</i> method returns all elements that do not match the criteria</h2>
+  <h2 style="color: gray;"><b style="color: black;">Tip: </b>The <i style="color:crimson;">not()</i> method is the
+    opposite of <i style="color:crimson;">filter()</i></h2>
+  <hr>
+  <div id="container">
+    <p>This is a paragraph in a &ltdiv&gt.</p>
+    <p>This is another paragraph &ltdiv&gt.</p>
+    <p class="intro">I'm ArshdeepSingh.</p>
+    <p>It's quarter to 2.</p>
+  </div>
+  <h3>
+    Select <b style="color: seagreen;">&ltp&gt</b>
+  </h3>
+  <button id="first">first()</button>
+  <button id="last">last()</button>
+  <button id="eq">eq(1)</button>
+  <button id="filter" style="background-color: crimson;">filter(".intro")</button>
+  <button id="not" style="background-color: crimson;">not(".intro")</button>
+  <button id="refresh">Refresh</button>
+
+</body>
+<style>
+  * {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  body {
+    padding: 5px;
+  }
+
+  #refresh {
+    color: white;
+    background-color: seagreen;
+  }
+
+  #container {
+    color: grey;
+    padding: 0.75vw 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    border: 1px solid lightgray;
+  }
+
+  p {
+    text-align: left;
+    font-size: 1.25vw;
+    margin: 0.5vw;
+    padding: 0.25vw;
+    width: 95%;
+    height: 2.5vw;
+    color: grey;
+    border: 1px solid grey;
+  }
+
+  button {
+    margin: 1vw;
+    height: 2vw;
+    width: 12.5vw;
+    font-size: 1.125vw;
+    color: white;
+    background-color: cornflowerblue;
+    border: 0.125vw solid black;
+    cursor: pointer;
+  }
+</style>
+
+</html>
